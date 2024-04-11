@@ -13,7 +13,7 @@ const Home = () => {
         </div>
         <input
           placeholder="Enter Username"
-          className="rounded-lg px-2 bg-slate-600 mt-5 mb-2 py-2 text-lg text-white"
+          className="rounded-lg px-2 bg-slate-600 mt-5 mb-2 py-2 shadow-2xl shadow-zinc-900 text-lg text-white"
         />
         <div>
           <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-md lg:text-lg font-semibold leading-6  text-white inline-block">
