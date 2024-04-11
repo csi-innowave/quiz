@@ -61,13 +61,7 @@ export const WavyBackground = ({
     render();
   };
 
-  const waveColors = colors ?? [
-    "#38bdf8",
-    "#818cf8",
-    "#c084fc",
-    "#e879f9",
-    "#22d3ee",
-  ];
+  const waveColors = colors ?? ["#6C0345", "#DC6B19", "#F7C566", "#FFF8DC"];
   const drawWave = (n: number) => {
     nt += getSpeed();
     for (i = 0; i < n; i++) {
@@ -110,12 +104,7 @@ export const WavyBackground = ({
   }, []);
 
   return (
-    <div
-      className={cn(
-        "h-screen flex flex-col items-center justify-center",
-        containerClassName
-      )}
-    >
+    <div className={cn("h-screen", containerClassName)}>
       <canvas
         className="absolute inset-0 z-0"
         ref={canvasRef}

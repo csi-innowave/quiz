@@ -9,12 +9,12 @@ const Quiz = () => {
     console.log("Next Clicked");
   }
   return (
-    <WavyBackground className="max-w-4xl mx-auto pb-40">
+    <WavyBackground className="max-w-4xl mx-auto pt-10 pb-40">
       <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
         MindForge Round I
       </p>
       <Questions />
-      <div className="grid grid-cols-2 mt-[70%] gap-20">
+      <div className="grid grid-cols-2  gap-20">
         <button
           className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
           onClick={handlePrev}

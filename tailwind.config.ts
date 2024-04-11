@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [addVariablesForColors],
+  plugins: [addVariablesForColors, require("@tailwindcss/forms")],
   darkMode: "class",
 };
 
