@@ -1,5 +1,7 @@
+import { BackgroundBeams } from "./ui/background-beams";
+
 const Quiz = () => {
-  return <div>Quiz</div>;
+  return <>Hi</>;
 };
 
 export default Quiz;
