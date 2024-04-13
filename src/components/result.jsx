@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
-
+import { BackgroundBeams } from "./ui/background-beams";
 import ResultTable from "./resultTable";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -42,51 +42,60 @@ export default function Result() {
   }
 
   return (
-    <div className="container">
-      <h1 className="title text-light">Quiz Application</h1>
+    <div className="text-white mt-10">
+      <h1 className="bg-clip-text font-bold text-transparent drop-shadow-2xl text-3xl text-center md:text-4xl lg:text-7xl bg-gradient-to-b from-white/80 to-blue-700/20">
+        Your Score
+      </h1>
 
-      <div className="result flex-center">
-        <div className="flex">
-          <span>Username</span>
-          <span className="bold">{userId || ""}</span>
-        </div>
-        <div className="flex">
-          <span>Total Quiz Points : </span>
-          <span className="bold">{totalPoints || 0}</span>
-        </div>
-        <div className="flex">
-          <span>Total Questions : </span>
-          <span className="bold">{queue.length || 0}</span>
-        </div>
-        <div className="flex">
-          <span>Total Attempts : </span>
-          <span className="bold">{attempts || 0}</span>
-        </div>
-        <div className="flex">
-          <span>Total Earn Points : </span>
-          <span className="bold">{earnPoints || 0}</span>
-        </div>
-        <div className="flex">
-          <span>Quiz Result</span>
-          <span
-            style={{ color: `${flag ? "#2aff95" : "#ff2a66"}` }}
-            className="bold"
-          >
-            {flag ? "Passed" : "Failed"}
+      <div className="z-10 relative result flex mt-10 items-center flex-col">
+        <div className="flex gap-5">
+          <span className="text-2xl font-sans font-bold">
+            Total Quiz Points :{"   "}
           </span>
+          <span className="text-2xl font-sans font-bold">
+            {"  " + totalPoints || 0}
+          </span>
+        </div>
+        <div className="flex gap-5 mt-5">
+          <span className="text-2xl font-sans font-bold">
+            Total Questions Attempted:{" "}
+          </span>
+          <span className="text-2xl font-sans font-bold">
+            {queue.length || 0}
+          </span>
+        </div>
+        <div className="flex gap-5 mt-5">
+          <span className="text-2xl font-sans font-bold">
+            Total Attempts Taken:{" "}
+          </span>
+          <span className="text-2xl font-sans font-bold">{attempts || 0}</span>
+        </div>
+        <div className="flex gap-5 mt-5">
+          <span className="text-2xl font-sans font-bold">Total Points : </span>
+          <span className="text-2xl font-sans font-bold">{earnPoints}</span>
         </div>
       </div>
 
-      <div className="start">
-        <Link className="btn" to={"/"} onClick={onRestart}>
-          Restart
+      <div className="start relative z-10 flex">
+        <Link
+          to={"/"}
+          onClick={onRestart}
+          className="p-[3px] relative mx-auto mt-10"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+            Restart
+          </div>
+        </Link>
+        <Link to={"/leaderboard"} className="p-[3px] relative mx-auto mt-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+            Leaderboard
+          </div>
         </Link>
       </div>
 
-      <div className="container">
-        {/* result table */}
-        <ResultTable></ResultTable>
-      </div>
+      <BackgroundBeams />
     </div>
   );
 }

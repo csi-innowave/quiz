@@ -29,7 +29,7 @@ const Questions = ({ onChecked }) => {
   return (
     <div className=" mt-20 mb-40 items-center">
       <h2 className="text-white mt-10 text-2xl text-center font-semibold">
-        {questions?.question}
+        {"Q" + questions?.id + " . " + questions?.question}
       </h2>
       <ul key={questions?.id} className="">
         {questions?.options.map((q, i) => (
