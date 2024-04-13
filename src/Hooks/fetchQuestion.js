@@ -28,11 +28,10 @@ export const useFetchQestion = () => {
         if (questions.length > 0) {
           setGetData((prev) => ({ ...prev, isLoading: false }));
           setGetData((prev) => ({ ...prev, apiData: questions }));
-          console.log(questions);
+
           /** dispatch an action */
           dispatch(Action.startExamAction({ question: questions, answers }));
         } else {
-          console.log("No questions ");
           throw new Error("No Question Avalibale");
         }
       } catch (error) {

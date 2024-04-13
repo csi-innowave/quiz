@@ -1,10 +1,10 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./components/Home.tsx";
 import Quiz from "./components/Quiz.jsx";
 import Leaderboard from "./components/Leaderboard.jsx";
 import Result from "./components/result.jsx";
-import { CheckUserExist } from "./helper/helper";
+import { CheckUserExist } from "./helper/helper.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
