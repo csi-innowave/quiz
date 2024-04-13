@@ -50,7 +50,7 @@ export default function Result() {
       <div className="z-10 relative result flex mt-10 items-center flex-col">
         <div className="flex gap-5">
           <span className="text-2xl font-sans font-bold">
-            Total Quiz Points :{"   "}
+            Max Points :{"   "}
           </span>
           <span className="text-2xl font-sans font-bold">
             {"  " + totalPoints || 0}
@@ -64,14 +64,9 @@ export default function Result() {
             {queue.length || 0}
           </span>
         </div>
+
         <div className="flex gap-5 mt-5">
-          <span className="text-2xl font-sans font-bold">
-            Total Attempts Taken:{" "}
-          </span>
-          <span className="text-2xl font-sans font-bold">{attempts || 0}</span>
-        </div>
-        <div className="flex gap-5 mt-5">
-          <span className="text-2xl font-sans font-bold">Total Points : </span>
+          <span className="text-2xl font-sans font-bold">Your Points : </span>
           <span className="text-2xl font-sans font-bold">{earnPoints}</span>
         </div>
       </div>
