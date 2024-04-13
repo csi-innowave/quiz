@@ -5,6 +5,17 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
+    screens: {
+      tablet: "640px",
+
+      laptop: "900px",
+
+      desktop: "1280px",
+
+      md: "768px",
+
+      lg: "1024px",
+    },
   },
   plugins: [addVariablesForColors, require("@tailwindcss/forms")],
   darkMode: "class",

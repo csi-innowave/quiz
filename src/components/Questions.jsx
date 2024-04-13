@@ -30,8 +30,8 @@ const Questions = ({ onChecked }) => {
   return isLoading === true ? (
     <h1 className="text-white text-3xl mb-10 text-center">Loading....</h1>
   ) : (
-    <div className=" mb-20 items-center">
-      <h2 className="text-white mt-10 text-2xl text-center font-semibold">
+    <div className="mb-5 desktop:mb-20 items-center">
+      <h2 className="text-white mt-5 md:mt-10 text-xl md:text-2xl text-center font-semibold">
         {"Q" + questions?.id + " . " + questions?.question}
       </h2>
       <ul key={questions?.id} className="">
@@ -43,7 +43,7 @@ const Questions = ({ onChecked }) => {
               name="options"
               id={`q${i}-option`}
               onChange={() => onSelect(i)}
-              className="h-5 w-5 checked:bg-green-500 text-green-500"
+              className="md:h-5 md:w-5 h-3 w-3 checked:bg-red-800 text-red-900"
             />
             <label
               htmlFor={`q${i}-option`}
