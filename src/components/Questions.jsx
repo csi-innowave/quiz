@@ -14,6 +14,7 @@ const Questions = ({ onChecked }) => {
   const questions = useSelector(
     (state) => state.questions.queue[state.questions.trace]
   );
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,8 +27,10 @@ const Questions = ({ onChecked }) => {
     dispatch(updateResult({ trace, checked }));
   }
 
-  return (
-    <div className=" mt-20 mb-40 items-center">
+  return isLoading === true ? (
+    <h1 className="text-white text-3xl mb-10 text-center">Loading....</h1>
+  ) : (
+    <div className=" mb-20 items-center">
       <h2 className="text-white mt-10 text-2xl text-center font-semibold">
         {"Q" + questions?.id + " . " + questions?.question}
       </h2>
