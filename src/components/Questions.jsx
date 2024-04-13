@@ -29,7 +29,7 @@ const Questions = ({ onChecked }) => {
     <h1 className="text-white text-3xl mb-10 text-center">Loading....</h1>
   ) : (
     <div className="mb-5 desktop:mb-20 items-center">
-      <h2 className="text-white mt-5 md:mt-10 text-xl md:text-2xl text-center font-semibold">
+      <h2 className="text-white mt-5 text-xl md:text-2xl text-center font-semibold">
         {"Q" + questions?.id + " . " + questions?.question}
       </h2>
       <ul key={questions?.id} className="">
