@@ -40,7 +40,7 @@ const Quiz = () => {
   return (
     <div className=" bg-black ">
       <WavyBackground className="  mx-auto pt-10 ">
-        <div className="tablet:mt-[13%]  mx-2">
+        <div className="tablet:mt-[12%] mt-[15%] mx-2">
           <Questions onChecked={onChecked} />
           <div className="grid grid-cols-2 mx-2 gap-20">
             <button
