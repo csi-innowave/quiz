@@ -16,14 +16,13 @@ export const updateResult = (index) => async (dispatch) => {
   }
 };
 
-/** insert user data */
 export const usePublishResult = (resultData) => {
   const { result, username } = resultData;
   (async () => {
     try {
       if (!result && !username) throw new Error("Couldn't get Result");
       await postServerData(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/api/result`,
+        `https://backend-quiz.csiinnowave.com/api/result`,
         resultData,
         (data) => data
       );
