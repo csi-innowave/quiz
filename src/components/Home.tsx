@@ -1,7 +1,18 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUserId } from "../redux/result_reducer";
+
 const Home = () => {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const dispatch = useDispatch();
+
+  function startQuiz() {
+    if (inputRef.current && inputRef.current?.value) {
+      dispatch(setUserId(inputRef.current?.value));
+    }
+  }
+
   return (
     <div className="css-selector h-screen">
       <img
@@ -22,6 +33,7 @@ const Home = () => {
         <div>
           <Link
             to={"/quiz"}
+            onClick={startQuiz}
             className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-md lg:text-lg font-semibold leading-6  text-white inline-block"
           >
             <span className="overflow-hidden rounded-full">
