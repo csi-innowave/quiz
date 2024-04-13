@@ -42,7 +42,7 @@ export default function Result() {
   }
 
   return (
-    <div className="text-white mt-10">
+    <div className="bg-black h-screen text-white pt-10">
       <h1 className="bg-clip-text font-bold text-transparent drop-shadow-2xl text-3xl text-center md:text-4xl lg:text-7xl bg-gradient-to-b from-white/80 to-blue-700/20">
         Your Score
       </h1>
