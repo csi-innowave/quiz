@@ -19,9 +19,9 @@ const Home = () => {
         src="https://res.cloudinary.com/dpp2rltxx/image/upload/v1709819749/csi/uwmdhwkpunbabkatohsf.png"
         className="absolute h-24 ml-5 mt-5"
       />
-      <div className="flex justify-center items-center flex-col pt-[20%]">
+      <div className="flex justify-center items-center flex-col pt-[40%] md:pt-[20%]">
         <div>
-          <h1 className="bg-clip-text font-bold text-transparent drop-shadow-2xl text-3xl text-center md:text-4xl lg:text-7xl bg-gradient-to-b from-white/80 to-white/20">
+          <h1 className="bg-clip-text font-bold text-transparent drop-shadow-2xl text-4xl text-center md:text-5xl lg:text-7xl bg-gradient-to-b from-white/80 to-white/20">
             Welcome To The Quiz
           </h1>
         </div>
