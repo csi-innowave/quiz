@@ -5,3 +5,13 @@
 body {
   background-color: black;
 }
+/* Add this CSS code to your tailwind.css or any CSS file loaded after Tailwind CSS */
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
+/* In your CSS file or style tag */
+.shadow-white {
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.8);
+}
