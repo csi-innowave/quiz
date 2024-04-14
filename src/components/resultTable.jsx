@@ -23,7 +23,7 @@ export default function ResultTable() {
                 {/* Displaying top three users */}
                 {data.map((user, index) => (
                     <div key={index}
-                         className="rounded-full p-6 flex justify-between items-center gradient-background bg-gradient-to-r from-blue-400 to-pink-400">
+                         className="rounded-full p-6 flex justify-between items-center gradient-background bg-gradient-to-r from-[#5170ff] to-[#ff66c4]">
 
                         <div
                             className="bg-black text-transparent w-16 h-16 rounded-full flex justify-center items-center">
@@ -51,7 +51,7 @@ export default function ResultTable() {
                             <img
                                 src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713120434/CSI%20Website/Quiz/8-removebg-preview_fkycmw.png"
                                 alt="Third Place Badge"
-                                className="h-20 w-44"
+                                className="h-24 w-48"
                             />
                         ) : (
                             <div className="w-32"></div>
