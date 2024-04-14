@@ -6,6 +6,7 @@ export default {
   theme: {
     extend: {},
     screens: {
+      largest: "1600px",
       tablet: "640px",
 
       laptop: "900px",
