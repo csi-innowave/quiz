@@ -39,26 +39,30 @@ const Quiz = () => {
   }
   return (
     <div className=" bg-black ">
+      <img
+        src="https://res.cloudinary.com/dpp2rltxx/image/upload/v1709819749/csi/uwmdhwkpunbabkatohsf.png"
+        className="absolute z-20 h-16 md:h-24 top-5 right-5"
+      />
       <WavyBackground className="  mx-auto pt-10 ">
         <div className="tablet:mt-[12%] desktop:mt-[9%] largest:mt-[5%] mt-[15%] mx-2">
           <Questions onChecked={onChecked} />
-          <div className="grid grid-cols-2 mx-2 gap-20">
+          <div className="grid grid-cols-2 mx-5 md:mx-16 gap-20 md:gap-32">
             <button
               className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
               onClick={onPrev}
             >
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                Previous
+              <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFF8DC_0%,#DC6B19_50%,#F7C566_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm text-blue-200 font-bold backdrop-blur-3xl">
+                P R E V I O U S
               </span>
             </button>
             <button
               className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
               onClick={onNext}
             >
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                Next
+              <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFF8DC_0%,#DC6B19_50%,#F7C566_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm text-blue-200 font-bold  backdrop-blur-3xl">
+                N E X T
               </span>
             </button>
           </div>

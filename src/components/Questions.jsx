@@ -28,7 +28,7 @@ const Questions = ({ onChecked }) => {
   return isLoading === true ? (
     <h1 className="text-white text-3xl mb-10 text-center">Loading....</h1>
   ) : (
-    <div className="mb-5 bg-white rounded-xl border-slate-950 border-2 pt-5 md:mx-16 mx-2 desktop:mb-20 items-center">
+    <div className="mb-5 bg-white rounded-lg border-slate-950 border-2 pt-5 md:mx-16 mx-2 desktop:mb-20 items-center">
       <h2 className="text-black mt-2 px-2 text-xl mx-2 md:text-2xl ml-3 md:ml-0 md:text-center font-semibold">
         {"Q" + questions?.id + " . " + questions?.question}
       </h2>
