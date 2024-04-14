@@ -4,6 +4,11 @@ import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColo
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      fjalla: ["Fjalla One"],
+      jersey: ["'Jersey 15'"],
+      spartan: ["League Spartan"],
+    },
     extend: {},
     screens: {
       largest: "1600px",
