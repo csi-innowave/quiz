@@ -22,7 +22,7 @@ const Home = () => {
             "url('https://res.cloudinary.com/dpp2rltxx/image/upload/v1713111288/csi/qyuz/viosdwl78ch8biqxmko6.png')",
         }}
       >
-        <div className="relative md:gap-10 gap-5 z-20 pt-5 flex justify-center items-center mx-auto">
+        <div className="relative md:gap-10 gap-1 z-20 pt-5 flex justify-center items-center mx-auto">
           <img
             src="https://res.cloudinary.com/dpp2rltxx/image/upload/v1713109149/csi/qyuz/hfumyw1sacge8ooeqaro.png"
             className="md:h-40 h-24"
