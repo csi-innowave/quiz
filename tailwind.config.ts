@@ -8,6 +8,8 @@ export default {
       fjalla: ["Fjalla One"],
       jersey: ["'Jersey 15'"],
       spartan: ["League Spartan"],
+      pixelify: ["Pixelify Sans"],
+      micro: [" 'Micro 5 Charted' "],
     },
     extend: {},
     screens: {
