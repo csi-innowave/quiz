@@ -23,18 +23,17 @@ export default function ResultTable() {
                 {/* Displaying top three users */}
                 {data.map((user, index) => (
                     <div key={index}
-                         className="rounded-full p-6 flex justify-between items-center gradient-background bg-gradient-to-r from-[#5170ff] to-[#ff66c4]">
+                         className="rounded-3xl p-3 flex justify-between items-center bg-slate-300">
 
                         <div
-                            className="bg-black text-transparent w-16 h-16 rounded-full flex justify-center items-center">
-                            <div className="text-4xl text-blue-400 font-bold mb-2">{index + 1}</div>
+                            className="bg-black text-transparent w-16 h-16 rounded-2xl flex justify-center items-center">
+                            <div className="text-4xl text-blue-500 font-bold font-pixelify mb-2">{index + 1}</div>
                         </div>
 
-                        <div className="font-bold text-3xl uppercase">{user.username}</div>
-                        {/* Display points */}
-                        <div className="font-bold text-3xl">{user.points}</div>
-                        {/* Display badges if available */}
-                        {/* Rendering different badge images based on position */}
+                        <div className="font-bold font-pixelify text-3xl uppercase">{user.username}</div>
+
+                        <div className="font-bold font-pixelify text-3xl">{user.points}</div>
+
                         {index === 0 ? (
                             <img
                                 src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713188066/CSI%20Website/Quiz/first-first-place-svgrepo-com_sfzjtx.svg"
