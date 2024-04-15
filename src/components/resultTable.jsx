@@ -37,21 +37,21 @@ export default function ResultTable() {
                         {/* Rendering different badge images based on position */}
                         {index === 0 ? (
                             <img
-                                src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713120380/CSI%20Website/Quiz/6-removebg-preview_ur47rm.png"
+                                src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713188066/CSI%20Website/Quiz/first-first-place-svgrepo-com_sfzjtx.svg"
                                 alt="First Place Badge"
-                                className="h-24 w-48"
+                                className="h-20 pr-5"
                             />
                         ) : index === 1 ? (
                             <img
-                                src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713120406/CSI%20Website/Quiz/7-removebg-preview_uy5epw.png"
+                                src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713188243/CSI%20Website/Quiz/second-svgrepo-com_rsm8pz.svg"
                                 alt="Second Place Badge"
-                                className="h-24 w-48"
+                                className="h-20 pr-5"
                             />
                         ) : index === 2 ? (
                             <img
-                                src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713120434/CSI%20Website/Quiz/8-removebg-preview_fkycmw.png"
+                                src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713188263/CSI%20Website/Quiz/third-svgrepo-com_zi0zqp.svg"
                                 alt="Third Place Badge"
-                                className="h-24 w-48"
+                                className="h-20 pr-5"
                             />
                         ) : (
                             <div className="w-32"></div>
