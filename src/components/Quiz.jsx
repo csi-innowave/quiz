@@ -52,7 +52,7 @@ const Quiz = () => {
               onClick={onPrev}
             >
               <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFF8DC_0%,#DC6B19_50%,#F7C566_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm text-blue-200 font-bold backdrop-blur-3xl">
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-[12px] md:text-sm text-blue-200 font-bold backdrop-blur-3xl">
                 P R E V I O U S
               </span>
             </button>
@@ -61,7 +61,7 @@ const Quiz = () => {
               onClick={onNext}
             >
               <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFF8DC_0%,#DC6B19_50%,#F7C566_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm text-blue-200 font-bold  backdrop-blur-3xl">
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-[12px] md:text-sm text-blue-200 font-bold  backdrop-blur-3xl">
                 N E X T
               </span>
             </button>

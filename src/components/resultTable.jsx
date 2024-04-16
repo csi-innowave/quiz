@@ -1,65 +1,64 @@
-import React, { useEffect, useState } from "react";
-import { getServerData } from "../helper/helper";
+import React, {useEffect, useState} from "react";
+import {getServerData} from "../helper/helper";
 
 export default function ResultTable() {
-  const [data, setData] = useState([]);
+    const [data, setData] = useState([]);
 
-  useEffect(() => {
-    getServerData(`https://backend-quiz.csiinnowave.com/api/result`, (res) => {
-      const sortedData = res.sort((a, b) => {
-        if (a.points !== b.points) {
-          return b.points - a.points;
-        } else {
-          return new Date(a.time) - new Date(b.time);
-        }
-      });
-      setData(sortedData);
-    });
-  }, []);
+    useEffect(() => {
+        getServerData(`https://backend-quiz.csiinnowave.com/api/result`, (res) => {
+            const sortedData = res.sort((a, b) => {
+                if (a.points !== b.points) {
+                    return b.points - a.points;
+                } else {
+                    return new Date(a.time) - new Date(b.time);
+                }
+            });
+            setData(sortedData);
+        });
+    }, []);
 
-  return (
-    <div className="text-white mt-10">
-      <div class="relative overflow-y-scroll">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 overflow-y-scroll">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-              <th scope="col" class="px-6 py-3">
-                Rank
-              </th>
-              <th scope="col" class="px-6 py-3">
-                Name
-              </th>
-              <th scope="col" class="px-6 py-3">
-                Points Earned
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {!data.length ? (
-              <tr>
-                <td colspan="4">No Data Found</td>
-              </tr>
-            ) : (
-              data.map((v, i) => (
-                <tr
-                  key={i}
-                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                >
-                  <td class="px-6 py-4">{i + 1}</td>
-                  <th
-                    scope="row"
-                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    {v?.username || ""}
-                  </th>
-                  <td class="px-6 py-4">{v?.points || 0}</td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-        <h2 className="mt-20"></h2>
-      </div>
-    </div>
-  );
+    return (
+        <div>
+            <div className="grid gap-4">
+                {/* Displaying top three users */}
+                {data.map((user, index) => (
+                    <div key={index}
+                         className="rounded-3xl p-3 flex justify-between items-center bg-slate-300">
+
+                        <div
+                            className="bg-black text-transparent w-16 h-16 rounded-2xl flex justify-center items-center">
+                            <div className="text-4xl text-pink-500 font-bold font-pixelify mb-2">{index + 1}</div>
+                        </div>
+
+                        <div className="font-bold font-pixelify text-3xl uppercase">{user.username}</div>
+
+                        <div className="font-bold font-pixelify text-3xl">{user.points}</div>
+
+                        {index === 0 ? (
+                            <img
+                                src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713188066/CSI%20Website/Quiz/first-first-place-svgrepo-com_sfzjtx.svg"
+                                alt="First Place Badge"
+                                className="h-20 pr-5"
+                            />
+                        ) : index === 1 ? (
+                            <img
+                                src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713188243/CSI%20Website/Quiz/second-svgrepo-com_rsm8pz.svg"
+                                alt="Second Place Badge"
+                                className="h-20 pr-5"
+                            />
+                        ) : index === 2 ? (
+                            <img
+                                src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713188263/CSI%20Website/Quiz/third-svgrepo-com_zi0zqp.svg"
+                                alt="Third Place Badge"
+                                className="h-20 pr-5"
+                            />
+                        ) : (
+                            <div className="w-32"></div>
+                        )
+                        }
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
