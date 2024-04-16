@@ -53,20 +53,15 @@ export default function Result() {
           </div>
           <div className="flex laptop:flex-row flex-col justify-around">
             <div className=" laptop:w-3/12  h-[30rem] flex flex-col items-center justify-around rounded-3xl  border-8 ">
-              <div className=" h-2/6 w-full ">
+              <div className=" w-full ">
                 <img
-                  className="object-cover h-5/6 w-full "
+                  className="object-cover h-full scale-150 w-full "
                   src="https://res.cloudinary.com/dzkldv06d/image/upload/v1713198409/InShot_20240415_002359224_uneatj.png"
                   alt=""
                 />
               </div>
-              <div className="shadow-neon font-bold text-3xl">
+              <div className="shadow-neon -mt-20 font-bold text-3xl">
                 You got {earnPoints / 2}% marks
-              </div>
-              <div className="">
-                <button className="bg-transparent border-white font-bold text-2xl border-2 rounded-full p-5">
-                  CHECK YOUR ANSWERS
-                </button>
               </div>
             </div>
             <div className=" h-[30rem]">
@@ -123,7 +118,7 @@ export default function Result() {
                       className="p-[3px] relative mx-auto mt-10"
                     >
                       <div className="absolute inset-0  rounded-lg" />
-                      <div className="px-8 py-2  bg-transparent rounded-full text-xl border-2 font-bold border-white relative group transition duration-200 text-pink-400/80 hover:bg-transparent">
+                      <div className="px-8 py-2  bg-transparent rounded-full text-xl border-2 font-bold border-white relative group transition duration-200 text-pink-400/80 hover:bg-transparent hover:drop-shadow-2xl">
                         LEADERBOARD
                       </div>
                     </Link>
@@ -135,7 +130,7 @@ export default function Result() {
                       className="p-[3px] relative mx-auto mt-10"
                     >
                       <div className="absolute inset-0  rounded-lg" />
-                      <div className="px-8 py-2  bg-transparent rounded-full text-xl border-2 font-bold border-white relative group transition duration-200 text-pink-400/80 hover:bg-transparent">
+                      <div className="px-8 py-2  bg-transparent rounded-full text-xl border-2 font-bold border-white relative group transition duration-200 text-pink-400/80 hover:bg-transparent hover:drop-shadow-2xl">
                         RESTART
                       </div>
                     </Link>
@@ -153,37 +148,6 @@ export default function Result() {
           alt=""
         />
       </div>
-
-      {/* <BackgroundBeams /> */}
-      {/* <span className="text-2xl font-sans font-bold">
-            {"  " + totalPoints || 0}
-          </span>
-
-          <span className="text-2xl font-sans font-bold">{earnPoints}</span>
-
-
-          <Link to={"/leaderboard"} className="p-[3px] relative mx-auto mt-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-            Leaderboard
-          </div>
-        </Link>
-
-
-        <Link
-          to={"/"}
-          onClick={onRestart}
-          className="p-[3px] relative mx-auto mt-10"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-            Restart
-          </div>
-        </Link>
-
-        <span className="text-2xl font-sans font-bold">
-            {queue.length || 0}
-          </span> */}
     </div>
   );
 }
