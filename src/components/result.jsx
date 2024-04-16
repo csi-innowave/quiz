@@ -42,36 +42,134 @@ export default function Result() {
   }
 
   return (
-    <div className="bg-black h-screen text-white pt-10">
-      <h1 className="bg-clip-text font-bold text-transparent drop-shadow-2xl text-3xl text-center md:text-4xl lg:text-7xl bg-gradient-to-b from-white/80 to-blue-700/20">
-        Your Score
-      </h1>
+    <div className="bg-black  text-white">
+      <div className="absolute flex justify-center w-full items-center">
+        <div className="flex flex-col w-full">
+          <div className="">
+            <div class="laptop:text-[7rem] text-[4rem] font-bold text-center relative">
+              <span class="text-white shadow-neon">GOOD JOB!</span>
+              <div class="absolute -inset-0 opacity-75  blur-lg"></div>
+            </div>
+          </div>
+          <div className="flex laptop:flex-row flex-col justify-around">
+            <div className=" laptop:w-3/12  h-[30rem] flex flex-col items-center justify-around rounded-3xl  border-8 ">
+              <div className=" h-2/6 w-full ">
+                <img
+                  className="object-cover h-5/6 w-full "
+                  src="https://res.cloudinary.com/dzkldv06d/image/upload/v1713198409/InShot_20240415_002359224_uneatj.png"
+                  alt=""
+                />
+              </div>
+              <div className="shadow-neon font-bold text-3xl">
+                You got {earnPoints / 2}% marks
+              </div>
+              <div className="">
+                <button className="bg-transparent border-white font-bold text-2xl border-2 rounded-full p-5">
+                  CHECK YOUR ANSWERS
+                </button>
+              </div>
+            </div>
+            <div className=" h-[30rem]">
+              <div className="">
+                <div className="flex  flex-col">
+                  <div className="flex flex-row justify-center">
+                    <div className="laptop:m-4 laptop:text-4xl text-2xl laptop:w-4/12 font-extrabold text-center p-4">
+                      CORRECT ANSWERS
+                    </div>
+                    <div className="laptop:m-4 laptop:text-4xl text-2xl laptop:w-4/12 font-extrabold text-center p-4">
+                      INCORRECT ANSWERS
+                    </div>
+                  </div>
 
-      <div className="z-10 relative result flex mt-10 items-center flex-col">
-        <div className="flex gap-5">
-          <span className="text-2xl font-sans font-bold">
-            Max Points :{"   "}
-          </span>
-          <span className="text-2xl font-sans font-bold">
-            {"  " + totalPoints || 0}
-          </span>
-        </div>
-        <div className="flex gap-5 mt-5">
-          <span className="text-2xl font-sans font-bold">
-            Total Questions Attempted:{" "}
-          </span>
-          <span className="text-2xl font-sans font-bold">
-            {queue.length || 0}
-          </span>
-        </div>
+                  <div className="flex flex-row laptop:justify-center justify-around">
+                    <div className="laptop:m-4 laptop:text-4xl text-2xl laptop:w-4/12 font-extrabold text-center p-3">
+                      <span className="text-xl rounded-full bg-blue-500 font-sans font-bold p-2">
+                        {earnPoints / 10}
+                      </span>
+                    </div>
+                    <div className="laptop:m-4 laptop:text-4xl text-2xl laptop:w-4/12 font-extrabold text-center p-3">
+                      <span className="text-xl rounded-full bg-blue-500 font-sans  font-bold p-2">
+                        {(totalPoints - earnPoints) / 10}
+                      </span>
+                    </div>
+                  </div>
 
-        <div className="flex gap-5 mt-5">
-          <span className="text-2xl font-sans font-bold">Your Points : </span>
-          <span className="text-2xl font-sans font-bold">{earnPoints}</span>
+                  <div className="flex flex-row laptop:justify-center justify-around">
+                    <div className="laptop:m-4 laptop:text-4xl text-2xl laptop:w-4/12 font-extrabold text-center p-4">
+                      SKIPPED
+                    </div>
+                    <div className="laptop:m-4 laptop:text-4xl text-2xl laptop:w-4/12 font-extrabold text-center p-4">
+                      MARKS
+                    </div>
+                  </div>
+
+                  <div className="flex flex-row laptop:justify-center justify-around">
+                    <div className="laptop:m-4 laptop:text-4xl text-2xl w-4/12 font-extrabold text-center p-3">
+                      <span className="text-xl font-sans rounded-full bg-blue-500 font-bold p-2">
+                        {totalPoints / 10 - attempts}
+                      </span>
+                    </div>
+                    <div className="laptop:m-4 laptop:text-4xl text-2xl w-4/12 font-extrabold text-center p-3">
+                      <span className="text-xl rounded-full bg-blue-500 font-sans font-bold p-2">
+                        {earnPoints}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-row justify-center ">
+                  <div className="my-2 laptop:mx-16 mx-2 ">
+                    <Link
+                      to={"/leaderboard"}
+                      className="p-[3px] relative mx-auto mt-10"
+                    >
+                      <div className="absolute inset-0  rounded-lg" />
+                      <div className="px-8 py-2  bg-transparent rounded-full text-xl border-2 font-bold border-white relative group transition duration-200 text-pink-400/80 hover:bg-transparent">
+                        LEADERBOARD
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="my-2 laptop:mx-16 mx-2">
+                    <Link
+                      to={"/"}
+                      onClick={onRestart}
+                      className="p-[3px] relative mx-auto mt-10"
+                    >
+                      <div className="absolute inset-0  rounded-lg" />
+                      <div className="px-8 py-2  bg-transparent rounded-full text-xl border-2 font-bold border-white relative group transition duration-200 text-pink-400/80 hover:bg-transparent">
+                        RESTART
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div className="flex h-screen w-full fixed -z-50">
+        <img
+          className="object-cover w-full"
+          src="https://res.cloudinary.com/dzkldv06d/image/upload/v1713116969/1_y8dsvd.png"
+          alt=""
+        />
+      </div>
 
-      <div className="start relative z-10 flex">
+      {/* <BackgroundBeams /> */}
+      {/* <span className="text-2xl font-sans font-bold">
+            {"  " + totalPoints || 0}
+          </span>
+
+          <span className="text-2xl font-sans font-bold">{earnPoints}</span>
+
+
+          <Link to={"/leaderboard"} className="p-[3px] relative mx-auto mt-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+            Leaderboard
+          </div>
+        </Link>
+
+
         <Link
           to={"/"}
           onClick={onRestart}
@@ -82,15 +180,10 @@ export default function Result() {
             Restart
           </div>
         </Link>
-        <Link to={"/leaderboard"} className="p-[3px] relative mx-auto mt-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-            Leaderboard
-          </div>
-        </Link>
-      </div>
 
-      <BackgroundBeams />
+        <span className="text-2xl font-sans font-bold">
+            {queue.length || 0}
+          </span> */}
     </div>
   );
 }
