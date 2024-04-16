@@ -27,7 +27,7 @@ export default function ResultTable() {
 
                         <div
                             className="bg-black text-transparent w-16 h-16 rounded-2xl flex justify-center items-center">
-                            <div className="text-4xl text-blue-500 font-bold font-pixelify mb-2">{index + 1}</div>
+                            <div className="text-4xl text-pink-500 font-bold font-pixelify mb-2">{index + 1}</div>
                         </div>
 
                         <div className="font-bold font-pixelify text-3xl uppercase">{user.username}</div>
