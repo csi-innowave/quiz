@@ -23,14 +23,14 @@ export default function ResultTable() {
                 {/* Displaying top three users */}
                 {data.map((user, index) => (
                     <div key={index}
-                         className="rounded-3xl p-3 flex justify-between items-center bg-slate-300">
+                         className="rounded-3xl p-3 flex justify-between items-center bg-slate-300 ">
 
                         <div
-                            className="bg-black text-transparent w-16 h-16 rounded-2xl flex justify-center items-center">
-                            <div className="text-4xl text-pink-500 font-bold font-pixelify mb-2">{index + 1}</div>
+                            className="bg-black text-transparent w-12 h-12 lg:w-16 lg:h-16 rounded-2xl flex justify-center items-center">
+                            <div className="lg:text-4xl text-2xl text-pink-500 font-bold font-pixelify mb-2">{index + 1}</div>
                         </div>
 
-                        <div className="font-bold font-pixelify text-3xl uppercase">{user.username}</div>
+                        <div className="font-bold font-pixelify lg:text-3xl text-2xl uppercase">{user.username}</div>
 
                         <div className="font-bold font-pixelify text-3xl">{user.points}</div>
 
@@ -38,22 +38,22 @@ export default function ResultTable() {
                             <img
                                 src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713188066/CSI%20Website/Quiz/first-first-place-svgrepo-com_sfzjtx.svg"
                                 alt="First Place Badge"
-                                className="h-20 pr-5"
+                                className="lg:h-20 lg:pr-5 h-10"
                             />
                         ) : index === 1 ? (
                             <img
                                 src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713188243/CSI%20Website/Quiz/second-svgrepo-com_rsm8pz.svg"
                                 alt="Second Place Badge"
-                                className="h-20 pr-5"
+                                className="lg:h-20 lg:pr-5 h-10"
                             />
                         ) : index === 2 ? (
                             <img
                                 src="https://res.cloudinary.com/dfhj4i9hd/image/upload/v1713188263/CSI%20Website/Quiz/third-svgrepo-com_zi0zqp.svg"
                                 alt="Third Place Badge"
-                                className="h-20 pr-5"
+                                className="lg:h-20 lg:pr-5 h-10"
                             />
                         ) : (
-                            <div className="w-32"></div>
+                            <div className="lg:w-32 w-25"></div>
                         )
                         }
                     </div>
