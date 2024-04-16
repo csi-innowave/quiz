@@ -47,3 +47,12 @@
 body {
   background-color: black;
 }
+.shadow-neon {
+  text-shadow:
+    0 0 4px #fff,
+    0 0 10px #fff,
+    0 0 10px #fb00ff,
+    0 0 20px #fb00ff,
+    0 0 30px #fb00ff;
+    
+}
