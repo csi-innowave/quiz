@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Questions from "./Questions";
 import { WavyBackground } from "./ui/wavy-background";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,14 +9,19 @@ import CountdownTimer from "./CountdownTimer";
 
 const Quiz = () => {
   const [check, setChecked] = useState(undefined);
+  const [totalTime, setTotalTime] = useState(20 * 60 * 1000); // Initialize with target time
 
   const result = useSelector((state) => state.result.result);
   const { queue, trace } = useSelector((state) => state.questions);
   const dispatch = useDispatch();
-  const targetTime = 20 * 60 * 1000;
-  const NOW_IN_MS = new Date().getTime();
-  const totalTime = targetTime + NOW_IN_MS;
-  console.log(totalTime);
+
+  useEffect(() => {
+    const targetTime = 20 * 60 * 1000;
+    const NOW_IN_MS = new Date().getTime();
+    const calculatedTotalTime = targetTime + NOW_IN_MS;
+    setTotalTime(calculatedTotalTime); // Update totalTime when component mounts
+  }, []); // Empty dependency array ensures this effect runs only once
+
   function onNext() {
     if (trace < queue.length) {
       dispatch(MoveNextQuestion());
@@ -42,6 +47,7 @@ const Quiz = () => {
   if (result.length && result.length >= queue.length) {
     return <Navigate to={"/result"} replace={true}></Navigate>;
   }
+
   return (
     <div className=" bg-black ">
       <img
