@@ -9,14 +9,14 @@ import CountdownTimer from "./CountdownTimer";
 
 const Quiz = () => {
   const [check, setChecked] = useState(undefined);
-  const [totalTime, setTotalTime] = useState(20 * 60 * 1000); // Initialize with target time
+  const [totalTime, setTotalTime] = useState(15 * 60 * 1000); // Initialize with target time
 
   const result = useSelector((state) => state.result.result);
   const { queue, trace } = useSelector((state) => state.questions);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const targetTime = 20 * 60 * 1000;
+    const targetTime = 15 * 60 * 1000;
     const NOW_IN_MS = new Date().getTime();
     const calculatedTotalTime = targetTime + NOW_IN_MS;
     setTotalTime(calculatedTotalTime); // Update totalTime when component mounts
