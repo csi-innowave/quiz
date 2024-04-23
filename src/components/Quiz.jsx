@@ -5,13 +5,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { MoveNextQuestion, MovePrevQuestion } from "../Hooks/fetchQuestion";
 import { PushAnswer } from "../Hooks/setResult";
+import CountdownTimer from "./CountdownTimer";
+
 const Quiz = () => {
   const [check, setChecked] = useState(undefined);
 
   const result = useSelector((state) => state.result.result);
   const { queue, trace } = useSelector((state) => state.questions);
   const dispatch = useDispatch();
-
+  const targetTime = 20 * 60 * 1000;
+  const NOW_IN_MS = new Date().getTime();
+  const totalTime = targetTime + NOW_IN_MS;
+  console.log(totalTime);
   function onNext() {
     if (trace < queue.length) {
       dispatch(MoveNextQuestion());
@@ -43,6 +48,7 @@ const Quiz = () => {
         src="https://res.cloudinary.com/dpp2rltxx/image/upload/v1709819749/csi/uwmdhwkpunbabkatohsf.png"
         className="absolute z-20 h-16 md:h-24 top-5 right-5"
       />
+      <CountdownTimer targetDate={totalTime} />
       <WavyBackground className="  mx-auto pt-10 ">
         <div className="tablet:mt-[12%] desktop:mt-[9%] largest:mt-[5%] mt-[15%] mx-2">
           <Questions onChecked={onChecked} />

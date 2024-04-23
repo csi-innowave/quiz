@@ -13,10 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/quiz",
     element: (
-      <CheckUserExist>
-        {" "}
-        <Quiz />
-      </CheckUserExist>
+      // <CheckUserExist>
+      // {" "}
+      <Quiz />
+      // </CheckUserExist>
     ),
   },
   {
