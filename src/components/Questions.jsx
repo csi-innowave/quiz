@@ -15,14 +15,15 @@ const Questions = ({ onChecked }) => {
 
   const dispatch = useDispatch();
 
+  // Initialize the checked state based on existing result
   useEffect(() => {
-    dispatch(updateResult({ trace, checked }));
-  }, [checked]);
+    setChecked(result[trace]);
+  }, [result, trace]);
 
   function onSelect(i) {
     onChecked(i);
     setChecked(i);
-    dispatch(updateResult({ trace, checked }));
+    dispatch(updateResult({ trace, checked: i }));
   }
 
   return isLoading === true ? (
@@ -44,6 +45,7 @@ const Questions = ({ onChecked }) => {
               name="options"
               id={`q${i}-option`}
               onChange={() => onSelect(i)}
+              checked={checked === i} // Check if the current option is selected
               className="md:h-5 md:w-5 h-4 w-4 checked:bg-red-800 text-red-900"
             />
             <label
