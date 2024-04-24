@@ -7,12 +7,15 @@ export default function ResultTable() {
   useEffect(() => {
     async function deleteDuplicates() {
       try {
-        const response = await fetch("/delete-duplicates", {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          "https://backend-quiz.csiinnowave.com/api/result",
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Failed to delete duplicates");
