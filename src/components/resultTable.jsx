@@ -30,7 +30,7 @@ export default function ResultTable() {
                             <div className="lg:text-4xl text-2xl text-pink-500 font-bold font-pixelify mb-2">{index + 1}</div>
                         </div>
 
-                        <div className="font-bold font-pixelify lg:text-3xl text-2xl uppercase">{user.username}</div>
+                        <div className="font-bold font-sans lg:text-3xl text-2xl uppercase">{user.username}</div>
 
                         <div className="font-bold font-sans text-3xl">{user.points}</div>
 
