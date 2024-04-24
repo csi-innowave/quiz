@@ -32,7 +32,7 @@ export default function ResultTable() {
 
                         <div className="font-bold font-pixelify lg:text-3xl text-2xl uppercase">{user.username}</div>
 
-                        <div className="font-bold font-pixelify text-3xl">{user.points}</div>
+                        <div className="font-bold font-sans text-3xl">{user.points}</div>
 
                         {index === 0 ? (
                             <img
